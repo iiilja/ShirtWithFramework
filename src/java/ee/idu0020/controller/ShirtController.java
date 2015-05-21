@@ -75,8 +75,14 @@ public class ShirtController {
                     shirt.setSize(size);
                     shirt.setDescription(description);
                     shirt.setCost(Integer.parseInt(cost));
-                    shirtService.update(shirt);
+                    ShirtError error = ShirtValidation.vld(id, cost, size);
                     Map<String, Object> model = new HashMap<>();
+                    if (error == null) {
+                        shirtService.update(shirt);
+                        
+                    } else {
+                        model.put("formError", error);
+                    }
                     model.put("shirt", shirt);
                     return new ModelAndView("shirt",model);
                 case "create":

@@ -17,8 +17,8 @@
                     <td>
                         <table width=100% border=0 cellpadding=2 cellspacing=1>
                             <TR BGCOLOR='#ffffff'><td BGCOLOR='#cccccc' nowrap>id:</td><td>&nbsp;${shirt.id}&nbsp;</TD></tr>
-                            <TR BGCOLOR='#ffffff'><td BGCOLOR='#cccccc' nowrap>Size:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='${shirt.size}' name='size'></font></b>${formError.sizeError}</TD></tr>
-                            <TR BGCOLOR='#ffffff'><td BGCOLOR='#cccccc' nowrap>Cost:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='${shirt.cost}' name='cost'></font></b>${formError.costError}</TD></tr>
+                            <TR BGCOLOR='#ffffff'><td BGCOLOR='#cccccc' nowrap>Size:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='${shirt.size}' name='size'></font></b>${formError.size}</TD></tr>
+                            <TR BGCOLOR='#ffffff'><td BGCOLOR='#cccccc' nowrap>Cost:</td><td>&nbsp;<b><font color='#0000ff'><input type='text' value='${shirt.cost}' name='cost'></font></b>${formError.cost}</TD></tr>
                             <TR BGCOLOR='#ffffff'><td BGCOLOR='#cccccc' nowrap>Description</td><td>&nbsp;<b><font color='#0000ff'><textarea name='description' cols=25 rows=6>${shirt.description}</textarea></font></b></TD></tr>
                         </table>
                     </td>
