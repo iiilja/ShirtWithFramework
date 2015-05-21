@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ee.idu0020.entity;
+
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+/**
+ *
+ * @author ilja
+ */
+@Entity
+@Table(name = "shirt")
+@NamedQueries({
+    @NamedQuery(name = "Shirt.findAll", query = "SELECT s FROM Shirt s"),
+    @NamedQuery(name = "Shirt.findById", query = "SELECT s FROM Shirt s WHERE s.id = :id"),
+    @NamedQuery(name = "Shirt.findBySize", query = "SELECT s FROM Shirt s WHERE s.size = :size"),
+    @NamedQuery(name = "Shirt.findByCost", query = "SELECT s FROM Shirt s WHERE s.cost = :cost"),
+    @NamedQuery(name = "Shirt.findByDescription", query = "SELECT s FROM Shirt s WHERE s.description = :description")})
+public class Shirt implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
+    @Column(name = "size")
+    private String size;
+    @Column(name = "cost")
+    private Integer cost;
+    @Column(name = "description")
+    private String description;
+
+    public Shirt() {
+    }
+
+    public Shirt(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public Integer getCost() {
+        return cost;
+    }
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Shirt)) {
+            return false;
+        }
+        Shirt other = (Shirt) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entity.Shirt[ id=" + id + " ]";
+    }
+    
+}
