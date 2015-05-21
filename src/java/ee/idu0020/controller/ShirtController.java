@@ -71,13 +71,14 @@ public class ShirtController {
         if (action != null) {
             switch (action){
                 case "save":
-                    Shirt shirt = shirtService.findById(Integer.parseInt(id));
-                    shirt.setSize(size);
-                    shirt.setDescription(description);
-                    shirt.setCost(Integer.parseInt(cost));
+                    
                     ShirtError error = ShirtValidation.vld(id, cost, size);
                     Map<String, Object> model = new HashMap<>();
+                    Shirt shirt = shirtService.findById(Integer.parseInt(id));
                     if (error == null) {
+                        shirt.setSize(size);
+                        shirt.setDescription(description);
+                        shirt.setCost(Integer.parseInt(cost));
                         shirtService.update(shirt);
                         
                     } else {
