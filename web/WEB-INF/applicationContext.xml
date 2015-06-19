@@ -6,7 +6,8 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
@@ -17,10 +18,6 @@
 
     <context:annotation-config/>
     
-<!--    <bean id="sessionFactory"
-        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="configLocation" value="classpath:hibernate.cfg.xml" />
-    </bean>-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url" value="jdbc:postgresql://imbi.ld.ttu.ee:5432/t093817_shirt"/>
@@ -64,5 +61,4 @@
     
     <bean id="shirtService" class="ee.idu0020.service.ShirtServiceImpl" />
     
-
 </beans>
